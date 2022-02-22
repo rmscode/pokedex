@@ -1,3 +1,4 @@
+// List of Pokemon and their stats
 let pokemonList = [{
   name: 'Charmander',
   height: 0.6,
@@ -19,3 +20,12 @@ let pokemonList = [{
   type: ['fire', 'flying']
 }
 ];
+
+// Send list to DOM & notate large Pokemon
+for (let i=0; i < pokemonList.length; i++){
+  if (pokemonList[i].height > 1.5) {
+    document.write(pokemonList[i].name + " [Height: " + pokemonList[i].height + "] " + "Wow, that’s big! " + "</br>")
+  } else {
+      document.write(pokemonList[i].name + " [Height: " + pokemonList[i].height + "] " + "</br>")
+  }
+}
