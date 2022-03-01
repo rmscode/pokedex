@@ -22,10 +22,9 @@ let pokemonList = [{
 ];
 
 // Send list to DOM & notate large Pokemon
-for (let i=0; i < pokemonList.length; i++){
-  if (pokemonList[i].height > 1.5) {
-    document.write(pokemonList[i].name + " [Height: " + pokemonList[i].height + "] " + "Wow, that’s big! " + "</br>")
-  } else {
-      document.write(pokemonList[i].name + " [Height: " + pokemonList[i].height + "] " + "</br>")
-  }
-}
+pokemonList.forEach(function(pokemon) {
+  if (pokemon.height > 1.5) {
+    document.write('<p>' + pokemon.name + ' [Height: ' + pokemon.height + ']' + ' [Weight: ' + pokemon.weight + ']' + ' [Type: ' + pokemon.type + ']' + " Wow, that's big!" + '</p>')
+  } else
+    document.write('<p>' + pokemon.name + ' [Height: ' + pokemon.height + ']' + ' [Weight: ' + pokemon.weight + ']' + ' [Type: ' + pokemon.type + ']' + '</p>')
+});
