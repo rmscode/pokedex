@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #EF5350;
     /* Font Settings*/
   font-family: 'Ubuntu', sans-serif;
   font-variant: small-caps;
@@ -14,13 +14,17 @@ h1 {
 }
 
 .button-class {
-  background-color: green;
+  background-color: #BDBDBD;
   border: none;
-  color: white;
-  padding: 16px 32px;
+  border-radius: 25px;
+  color: black;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  filter: drop-shadow(5px 5px 4px #212121);
 }
