@@ -1,4 +1,4 @@
-// List of Pokemon and their stats
+// Array of Pokemon objects
 let pokemonRepository = (function () {
   let pokemonList = [
   {
@@ -22,27 +22,37 @@ let pokemonRepository = (function () {
     type: ['fire', 'flying']
   }
 ];
+  // adds a pokemon to the lsit
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
 
-function add(pokemon) {
-  pokemonList.push(pokemon);
-}
+  // gets the pokemon list
+  function getAll() {
+    return pokemonList;
+  }
 
-function getAll() {
-  return pokemonList;
-}
+  // creates list of pokemon buttons
+  function addListItem(pokemon) {
+    let pokemonUL = document.querySelector('.pokemon-list');
+    let pokemonListItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    pokemonListItem.appendChild(button);
+    pokemonUL.appendChild(pokemonListItem);
+  }
 
-return {
-  add: add,
-  getAll: getAll
-};
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem
+  };
 
 })();
 
 
-// Send list to DOM & notate large Pokemon
+// fills repository with pokemon and adds to DOM
 pokemonRepository.getAll().forEach(function(pokemon) {
-  if (pokemon.height > 1.5) {
-    document.write('<p>' + pokemon.name + ' [Height: ' + pokemon.height + ']' + ' [Weight: ' + pokemon.weight + ']' + ' [Type: ' + pokemon.type + ']' + " Wow, that's big!" + '</p>')
-  } else
-    document.write('<p>' + pokemon.name + ' [Height: ' + pokemon.height + ']' + ' [Weight: ' + pokemon.weight + ']' + ' [Type: ' + pokemon.type + ']' + '</p>')
+  pokemonRepository.addListItem(pokemon);
 });
