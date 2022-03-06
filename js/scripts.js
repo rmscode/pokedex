@@ -23,9 +23,17 @@ let pokemonRepository = (function () {
   }
 ];
   // adds a pokemon to the lsit
-  function add(pokemon) {
-    pokemonList.push(pokemon);
+  // function add(pokemon) {
+  //   pokemonList.push(pokemon);
+  // }
+  function addv(pokemon) {
+    if (typeof pokemon === 'object' && typeof pokemon !== null && Object.keys(pokemon).every(al +> ['name, 'height', 'weight, 'type].includes(el))) {
+      pokemonList.push(pokemon);
+    } else {
+      alert('Invalid data is given.');
+    }
   }
+
 
   // gets the pokemon list
   function getAll() {
