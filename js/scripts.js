@@ -22,9 +22,13 @@ let pokemonRepository = (function () {
     type: ['fire', 'flying']
   }
 ];
-  // adds a pokemon to the lsit
-  function add(pokemon) {
-    pokemonList.push(pokemon);
+  // adds a pokemon to the list and checks that certain criteria is met
+  function addv(pokemon) {
+    if (typeof pokemon === 'object' && Object.keys(pokemon).every(pokemonStats => ['name', 'height', 'weight', 'type'].includes(pokemonStats)) && typeof pokemon !== null) {
+      pokemonList.push(pokemon);
+    } else {
+      alert("Must add Pokemon as an object with the following values: name, height, weight, type.");
+    }
   }
 
   // gets the pokemon list
@@ -49,7 +53,7 @@ let pokemonRepository = (function () {
   }
 
   return {
-    add: add,
+    addv: addv,
     getAll: getAll,
     addListItem: addListItem
   };
