@@ -1,8 +1,8 @@
 // IIFE start
 // array of Pokemon objects
 let pokemonRepository = (function () {
-  let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+let pokemonList = [];
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   // adds a pokemon to the list
   function add(pokemon) {
@@ -58,11 +58,40 @@ let pokemonRepository = (function () {
   }
 
   // shows pokemon details in console on click (event listener on line 26)
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function() {
-        console.log(pokemon);
+  function showDetails(item) {
+    PokemonRepository.loadDetails(item).then(function () {
+      showModal(item);
     });
   }
+
+// modal that will display pokemon details
+function showModal(item) {
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.innerHTML = '';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  let closeButtonElement = document.createElement('button');
+  closeButtonElement.classList.add('modal-close');
+  closeButtonElement.innerText = 'Close';
+
+  let titleElement = document.createElement('h1');
+  titleElement.innerText = text;
+
+  let contentElement = document.createElement('p');
+  contentElement.innerText = text;
+
+  modal.appendChild(closeButtonElement);
+  modal.appendChild(titleElement);
+  modal.appendChild(contentElement);
+  modalContainer.appendChild(modal);
+
+  modalContainer.classList.ass('is-visible');
+}
+
+document.querySelector('#show-modal').addEventListener('click', () => {
+  showModal(item);
+});
 
   return {
     add: add,
