@@ -28,3 +28,14 @@ h1 {
   margin: 4px 2px;
   filter: drop-shadow(5px 5px 4px #212121);
 }
+
+/* id given to modal so it is not displayed by default */
+#modal-container {
+  display: none;
+}
+
+/* clicking makes modal visible with this id */
+#modal-container.is-visible {
+  /* style the modal here later . . . */
+  display: block;
+}
