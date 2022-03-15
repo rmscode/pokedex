@@ -3,6 +3,7 @@
 let pokemonRepository = (function () {
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+let modalContainer = document.querySelector('#modal-container');
 
   // adds a pokemon to the list
   function add(pokemon) {
@@ -23,7 +24,10 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     button.classList.add('button-class');
     pokemonListItem.appendChild(button);
     pokemonUL.appendChild(pokemonListItem);
-    button.addEventListener('click', () => { showDetails(pokemon); });
+
+    button.addEventListener('click', () => {
+      showDetails(pokemon,);
+    });
   }
 
   // gets complete list of pokemon from pokeapi
@@ -59,14 +63,13 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   // shows pokemon details in console on click (event listener on line 26)
   function showDetails(item) {
-    PokemonRepository.loadDetails(item).then(function () {
+    pokemonRepository.loadDetails(item).then(function () {
       showModal(item);
     });
   }
 
 // modal that will display pokemon details
 function showModal(item) {
-  let modalContainer = document.querySelector('#modal-container');
   modalContainer.innerHTML = '';
   let modal = document.createElement('div');
   modal.classList.add('modal');
@@ -74,23 +77,43 @@ function showModal(item) {
   let closeButtonElement = document.createElement('button');
   closeButtonElement.classList.add('modal-close');
   closeButtonElement.innerText = 'Close';
+  closeButtonElement.addEventListener('click', hideModal);
 
   let titleElement = document.createElement('h1');
-  titleElement.innerText = text;
+  titleElement.innerText = item.name;
 
-  let contentElement = document.createElement('p');
-  contentElement.innerText = text;
+  let imgElement = document.createElement('img');
+  imgElement.setAttribute ("src", item.imageUrl);
+
+  let heightElement = document.createElement('p');
+  heightElement.innerText = item.height;
 
   modal.appendChild(closeButtonElement);
   modal.appendChild(titleElement);
-  modal.appendChild(contentElement);
+  modal.appendChild(imgElement);
+  modal.appendChild(heightElement);
   modalContainer.appendChild(modal);
 
-  modalContainer.classList.ass('is-visible');
+  modalContainer.classList.add('is-visible');
 }
 
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal(item);
+function hideModal() {
+  modalContainer.classList.remove('is-visible');
+}
+
+// exits modal when the escape key is pressed
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
+
+// exits modal when clicking outside of modal
+modalContainer.addEventListener('click', (e) => {
+  let target = e.target;
+  if (target === modalContainer) {
+    hideModal();
+  }
 });
 
   return {
