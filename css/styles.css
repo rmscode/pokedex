@@ -37,5 +37,17 @@ h1 {
 /* clicking makes modal visible with this id */
 #modal-container.is-visible {
   /* style the modal here later . . . */
-  display: block;
+  display: grid;
+  z-index: 999;
+}
+
+.modal {
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
 }
