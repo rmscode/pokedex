@@ -29,16 +29,22 @@ h1 {
   filter: drop-shadow(5px 5px 4px #212121);
 }
 
-/* id given to modal so it is not displayed by default */
-#modal-container {
-  display: none;
-}
-
 /* clicking makes modal visible with this id */
-#modal-container.is-visible {
-  /* style the modal here later . . . */
-  display: grid;
+#modal-container {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+  overflow: auto;
+  display: grid;
+  text-align: center;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .modal {
@@ -50,4 +56,54 @@ h1 {
     width: 100%;
     max-width: 700px;
     text-align: left;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
+
+.modal h1 {
+  margin-top: 0;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: block;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
