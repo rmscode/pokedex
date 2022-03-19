@@ -1,18 +1,3 @@
-body {
-  background-color: #EF5350;
-    /* Font Settings*/
-  font-family: 'Ubuntu', sans-serif;
-  font-variant: small-caps;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 30px;
-  font-weight: 700;
-}
-
 .button-class {
   background-color: #BDBDBD;
   border: none;
