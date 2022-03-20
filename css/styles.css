@@ -2,6 +2,10 @@
   margin-top: 60px;
 }
 
+.pokemon__name {
+  text-transform: uppercase;
+}
+
 .card {
   position: relative;
   display: -ms-flexbox;
