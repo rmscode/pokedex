@@ -17,7 +17,7 @@
         <a class="navbar-brand" href="#">Pokedex</a>
         <!-- I haven't figured out how to make this search bar work yet, but it's nice to look at -->
         <form class="form-inline">
-          <input class="form-control" type="search" placeholder="Search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </nav>
@@ -26,12 +26,12 @@
     <main class="container page-container">
 
       <!-- jQuery modal container below -->
-      <div class="modal fade" id="modal-container" tabindex="-1" role="dialog">
+      <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelleby="pokemon-details" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="">Modal Title</h5>
-              <button type="button" class="close" data-dismiss="modal">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden-"true">&times;</span>
               </button>
             </div>
