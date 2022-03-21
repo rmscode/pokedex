@@ -6,6 +6,15 @@ body {
   width: 100px;
 }
 
+.pokedex-device {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.pokedex-device img {
+  width: 25%;
+}
+
 .page-container {
   margin-top:90px;
 }
