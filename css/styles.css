@@ -9,13 +9,15 @@ body {
 .pokedex-device {
   text-align: center;
   margin-top: 100px;
-  margin-bottom: 25px;
 }
 
 .pokedex-device img {
   width: 20%;
 }
 
+.page-container {
+  margin-top: 90px
+}
 .pokemon__name {
   text-transform: uppercase;
 }
