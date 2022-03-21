@@ -19,7 +19,7 @@ let pokemonRepository = (function () {
     pokemonRepository.loadDetails(pokemon).then(function () {
       let $row = $('.row');
       // create a div container for the card
-      let $card = $('<div class="card" style="width:400px"></div>');
+      let $card = $('<div class="card" style="width:300px"></div>');
       // creat image element for the card
       let $image = $('<img class="card-img" alt="Card image" style="width:20%" />');
       $image.attr('src', pokemon.imageUrl);
