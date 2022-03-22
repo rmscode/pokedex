@@ -28,7 +28,7 @@ let pokemonRepository = (function () {
       // create title element for card body
       let $cardTitle = $("<h4 class='card-title pokemon__name' >" + pokemon.name + "</h4>");
       // create button for the card body
-      let $seeDetails = $('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-container">See Details</button>');
+      let $seeDetails = $('<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-container">See Details</button>');
 
       // append above creations to card & cardBody
       $row.append($card);
