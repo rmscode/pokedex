@@ -15,9 +15,6 @@ body {
   width: 20%;
 }
 
-.page-container {
-  margin-top: 90px
-}
 .pokemon__name {
   text-transform: uppercase;
 }
