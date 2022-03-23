@@ -6,6 +6,10 @@ body {
   width: 100px;
 }
 
+.page-container {
+  margin-top: 70px;
+}
+
 .pokedex-device {
   text-align: center;
   margin-top: 100px;
@@ -18,6 +22,7 @@ body {
 .pokemon__name {
   text-transform: uppercase;
 }
+
 
 .card {
   position: relative;

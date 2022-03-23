@@ -22,11 +22,11 @@ let pokemonRepository = (function() {
       let $card = $('<div class="card" style="width:300px"></div>');
       // creat image element for the card
       let $image = $(
-        '<img class="card-img" alt="Card image" style="width:20%" />'
+        '<img class="card-img mx-auto" alt="Card image" style="width:20%" />'
       );
       $image.attr("src", pokemon.imageUrl);
       // create div container for card body
-      let $cardBody = $('<div class="card-body"></div>');
+      let $cardBody = $('<div class="card-body text-center"></div>');
       // create title element for card body
       let $cardTitle = $(
         "<h4 class='card-title pokemon__name' >" + pokemon.name + "</h4>"
@@ -38,8 +38,8 @@ let pokemonRepository = (function() {
 
       // append above creations to card & cardBody
       $row.append($card);
-      $card.append($cardBody);
       $card.append($image);
+      $card.append($cardBody);
       $cardBody.append($cardTitle);
       $cardBody.append($seeDetails);
 
@@ -113,7 +113,7 @@ let pokemonRepository = (function() {
     // create element for name in modal conent
     let nameElement = $('<h1 class="pokemon__name">' + item.name + "</h1>");
     // create img element in modal content
-    let imageElement = $('<img class="modal-img" style="width:50">');
+    let imageElement = $('<img class="modal-img mx-auto" style="width:50">');
     imageElement.attr("src", item.imageUrl);
     // create element for height in modal content
     let heightElement = $("<p>" + "Height : " + item.height + "</p>");
